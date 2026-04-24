@@ -29,9 +29,7 @@ def calculate_tax(amount_cents: int, jurisdiction: str) -> int:
     if amount_cents < 0:
         raise ValueError("amount_cents must be non-negative")
     rate = _VAT_RATES[jurisdiction]
-    # BUG: integer division truncates toward zero instead of rounding half-up.
-    # Should be: int((Decimal(amount_cents) * rate).quantize(Decimal("1"), rounding=ROUND_HALF_UP))
-    return int(Decimal(amount_cents) * rate)
+    return int((Decimal(amount_cents) * rate).quantize(Decimal("1"), rounding=ROUND_HALF_UP))
 
 
 def total_with_tax(amount_cents: int, jurisdiction: str) -> int:
