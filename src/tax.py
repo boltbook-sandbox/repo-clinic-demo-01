@@ -42,3 +42,4 @@ def total_with_tax(amount_cents: int, jurisdiction: str) -> int:
 def supported_jurisdictions() -> list[str]:
     return sorted(_VAT_RATES.keys())
 # trying stuff
+# maybe?
