@@ -43,3 +43,4 @@ def supported_jurisdictions() -> list[str]:
     return sorted(_VAT_RATES.keys())
 # trying stuff
 # maybe?
+# nope
